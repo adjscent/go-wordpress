@@ -38,5 +38,9 @@ func (t *Time) UnmarshalJSON(b []byte) error {
 
 // MarshalJSON returns a WordPress formatted timestamp.
 func (t *Time) MarshalJSON() ([]byte, error) {
+	if t.Time == (time.Time{}) {
+		return []byte("null"), nil
+	}
+
 	return []byte(fmt.Sprintf(`"%s"`, t.Time.Format(TimeLayout))), nil
 }

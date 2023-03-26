@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/robbiet480/go-wordpress"
+	"github.com/adjscent/go-wordpress"
 )
 
 func factoryPage() wordpress.Page {
